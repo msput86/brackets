@@ -1,6 +1,5 @@
 module.exports = function check(str, bracketsConfig) {
   let arrOpenStack = [];
-  let arrClosedStack = [];
   for (var i in str) {
     let c = str[i];
     let clIndex = getCloseBrIndex(bracketsConfig, c);
@@ -23,7 +22,7 @@ module.exports = function check(str, bracketsConfig) {
           arrOpenStack.push(opIndex);
         }
       }
-    }else {
+    } else {
       if (clIndex != -1) {
         if (getLastItem(arrOpenStack) == clIndex) {
           arrOpenStack.pop();
